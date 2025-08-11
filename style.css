@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    background-color: #353f5f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #5c5c5c;
+    color: white;
+}
+
+header {
+    
+    background-color: #2a6016;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    text-align: center;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+main {
+    margin: 10px auto;
+    padding: 20px;
+    width: 50%;
+}
+
+#painel-resumo {
+    background-color: #49aa26;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-around;
+}
+
+.box-valor {
+    background-color: white;
+    color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+}
+
+.box-valor h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.box-valor span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#form {
+    margin: 20px auto;
+    background-color: #49aa26;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+form {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+form button{
+    position: relative;
+    left: 220px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2a6016;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        background-color: #1f4b12;
+    }
+}
+
+#lista-transacoes {
+    background-color: #49aa26;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#lista-transacoes h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.8em;
+}
+
+li {
+    list-style-type: none;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.itens {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-bottom: 3px solid #ccc;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.itens p {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.itens.entrada {
+    border-left: 5px solid #2a6016; /* Borda verde para entradas */
+}
+
+.itens.saida {
+    border-left: 5px solid #e74c3c; /* Borda vermelha para saídas */
+}

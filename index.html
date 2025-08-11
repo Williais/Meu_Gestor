@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Gestor - Will</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+            <h1>Meu Gestor</h1>
+            <img src="Assets/fluxo-de-caixa.png" alt="Logo do Meu Gestor" width="80">
+
+    </header>
+
+    <main>
+        <section id="painel-resumo">
+            <div  class="box-valor">
+                <h2>Entradas</h2>
+                <span class="box-entrada" id="entrada">R$ 0,00</span>
+            </div>
+            <div id="box-saida"  class="box-valor">
+                <h2>Saída</h2>
+                <span class="valor-saida" id="saida">R$ 0,00</span>
+            </div >
+            <div  id="box-saldo" class="box-valor">
+                <h2 id="title-saldo">Total</h2>
+                <span class="valor-total" id="saldo">R$ 0,00</span>
+            </div>
+        </section>
+
+        <section id="form">
+            <form action="" id="formulario">
+                
+                <p>Descrição: <input class="form-input" type="text" id="descricao" placeholder="Digite aqui sua descrição"></p>
+
+                <p>Valor: <input class="form-input" type="number" id="valor" placeholder="0,00"></p>
+
+                <p>Tipo: <select class="form-input" name="tipo" id="tipo">
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select></p>
+
+                <button type="submit">Adicionar</button>
+            </form>
+
+        </section>
+
+        <section id="lista-transacoes">
+            <h2>Histórico financeiro</h2>
+            <ul id="listagem">
+                <!-- As transações serão adicionadas aqui dinamicamente -->
+                
+            </ul>
+        </section>
+
+    </main>
+
+    <Footer>
+        <p>Desenvolvido por Will ❤️</p>
+    </Footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
