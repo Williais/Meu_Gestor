@@ -16,7 +16,7 @@
     <main>
         <section id="painel-resumo">
             <div  class="box-valor">
-                <h2>Entradas</h2>
+                <h2>Entrada</h2>
                 <span class="box-entrada" id="entrada">R$ 0,00</span>
             </div>
             <div id="box-saida"  class="box-valor">
@@ -31,17 +31,20 @@
 
         <section id="form">
             <form action="" id="formulario">
-                
-                <p>Descrição: <input class="form-input" type="text" id="descricao" placeholder="Digite aqui sua descrição"></p>
+                <div class="form-inputs">
+                    <p>Descrição: <input class="form-input" type="text" id="descricao" placeholder="Digite aqui sua descrição"></p>
 
-                <p>Valor: <input class="form-input" type="number" id="valor" placeholder="0,00"></p>
+                    <p>Valor: <input class="form-input" type="number" id="valor" placeholder="0,00"></p>
 
-                <p>Tipo: <select class="form-input" name="tipo" id="tipo">
-                    <option value="entrada">Entrada</option>
-                    <option value="saida">Saída</option>
-                </select></p>
-
-                <button type="submit">Adicionar</button>
+                    <p>Tipo: <select class="form-input" name="tipo" id="tipo">
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                    </select></p>
+                </div>
+                <div class="form-buttons">
+                    <button id="clear"><ion-icon name="refresh-outline"></ion-icon></button>
+                    <button type="submit" id="btn-add">Adicionar</button>
+                </div>
             </form>
 
         </section>
@@ -61,5 +64,7 @@
     </Footer>
 
     <script src="./Assets/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

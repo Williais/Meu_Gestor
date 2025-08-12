@@ -10,6 +10,8 @@ const form = document.querySelector('#formulario')
 const descricaoInput = document.querySelector('#descricao')
 const valorInput = document.querySelector('#valor')
 const tipoInput = document.querySelector('#tipo')
+const btnLimpar = document.querySelector('#clear')
+const btnAdicionar = document.querySelector('#btn-add')
 
 // Selecionando a lista onde as transações serão exibidas
 const listaUl = document.querySelector('#listagem');
@@ -22,8 +24,9 @@ let transacoes = transacaoSalva ? JSON.parse(transacaoSalva) : [] // array onde 
 
 atualizarPainelResumo() //chamei a função uma vez no início para garantir que os dados carregados do localStorage sejam exibidos na tela assim que a página abre.
 
+
 // Adicionando um evento de submit ao formulário
-form.addEventListener('submit', function (e){
+btnAdicionar.addEventListener('click', function (e){
     //isso fará que a página não recarregue ao enviar o formulário
     e.preventDefault()
 
@@ -51,7 +54,7 @@ form.addEventListener('submit', function (e){
 
     atualizarPainelResumo() // Atualiza o painel de resumo
 
-    // limpando os campos do formulário
+    //limpando os campos do formulário
     descricaoInput.value = ''
     valorInput.value = ''
     descricaoInput.focus() // Foca no campo de descrição para facilitar
@@ -149,3 +152,16 @@ function atualizarResumo() {
         titleSaldo.style.color = 'green'
     }
 }
+
+
+
+btnLimpar.addEventListener('click', function limparInput(e) {
+
+    e.preventDefault()
+
+    descricaoInput.value = ''
+    valorInput.value = ''
+    tipoInput.value = 'saida'
+    descricaoInput.focus()
+})
+
