@@ -1,3 +1,28 @@
+// Selecionando os elementos para o Modal
+const fundoModal = document.querySelector('#fundo-modal')
+const closeModal = document.querySelector('#close-modal')
+const openModal = document.querySelector('#open-modal')
+
+const toggleModal = () => {
+    fundoModal.classList.toggle('ativo')
+}
+// abrir ou fechar o modal
+openModal.addEventListener('click', toggleModal)
+closeModal.addEventListener('click', toggleModal)
+
+// se for clicado no fundo do modal, ele fechará tambem
+fundoModal.addEventListener('click', (e) => {
+    if (e.target === fundoModal){
+        toggleModal()
+    }
+})
+
+// se o botão ESC for clicado, será fechado tambem
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape'){
+        toggleModal()
+    }
+})
 
 // Selecionando os elementos do DOM
 const entrada = document.querySelector('#entrada')
@@ -53,10 +78,12 @@ btnAdicionar.addEventListener('click', function (e){
     transacoes.push(novaTransacao)
 
     atualizarPainelResumo() // Atualiza o painel de resumo
+    toggleModal()
 
     //limpando os campos do formulário
     descricaoInput.value = ''
     valorInput.value = ''
+    tipoInput.value = '/'
     descricaoInput.focus() // Foca no campo de descrição para facilitar
 
 })
@@ -161,7 +188,7 @@ btnLimpar.addEventListener('click', function limparInput(e) {
 
     descricaoInput.value = ''
     valorInput.value = ''
-    tipoInput.value = 'saida'
+    tipoInput.value = '/'
     descricaoInput.focus()
-})
+})  
 
