@@ -24,6 +24,28 @@ document.addEventListener('keydown', (e) => {
     }
 })
 
+// Modal de Limpar o Histórico Financeiro
+const lixeiraHistorico = document.querySelector('#clear-AllList')
+const btnCancelar = document.querySelector('#btn-cancelar')
+const btnExcluir = document.querySelector('#btn-excluir')
+const fundoModalDelete = document.querySelector('#fundoModal-delete')
+
+const ModalLimpar = () => {
+    fundoModalDelete.classList.toggle('ativo')
+}
+
+lixeiraHistorico.addEventListener('click', ModalLimpar)
+btnCancelar.addEventListener('click', ModalLimpar)
+
+btnExcluir.addEventListener('click', function (e) {
+
+    e.preventDefault() 
+
+    transacoes = []
+    atualizarPainelResumo()
+    ModalLimpar()
+})
+
 // Selecionando os elementos do DOM
 const entrada = document.querySelector('#entrada')
 const saida = document.querySelector('#saida')
@@ -48,7 +70,6 @@ const transacaoSalva = localStorage.getItem('HistoricoFinanceiro')
 let transacoes = transacaoSalva ? JSON.parse(transacaoSalva) : [] // array onde todas as transações serão adicionadas
 
 atualizarPainelResumo() //chamei a função uma vez no início para garantir que os dados carregados do localStorage sejam exibidos na tela assim que a página abre.
-
 
 // Adicionando um evento de submit ao formulário
 btnAdicionar.addEventListener('click', function (e){
@@ -106,7 +127,6 @@ function renderizarLista(){
     const itemDeExemplo = document.querySelector('.itens') 
     if (itemDeExemplo) {itemDeExemplo.remove()}
 
-
     // agora vem a magica de renderizar a lista de transações e adicionar os itens na lista
 
     transacoes.forEach(transacoes => {
@@ -123,8 +143,6 @@ function renderizarLista(){
             currency: 'BRL'
         })
 
-
-     
         // criar <li> na area do historico
 
         li.innerHTML = `
@@ -135,7 +153,6 @@ function renderizarLista(){
         listaUl.appendChild(li)
 
     })
-
 }
 
 function atualizarResumo() {
@@ -179,8 +196,6 @@ function atualizarResumo() {
         titleSaldo.style.color = 'green'
     }
 }
-
-
 
 btnLimpar.addEventListener('click', function limparInput(e) {
 

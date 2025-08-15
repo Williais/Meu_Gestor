@@ -41,7 +41,7 @@
                                 <input class="form-input" type="text" id="descricao" placeholder="Digite aqui sua descrição">
                                 <input class="form-input" type="number" id="valor" placeholder="Qual o valor?">
                                 <select class="form-input" name="tipo" id="tipo">
-                                    <option value="/" disabled selected>Selecione o tipo</option>
+                                    <option value="/" disabled selected>-- Selecione o tipo --</option>
                                     <option value="entrada">Entrada</option>
                                     <option value="saida">Saída</option>
                                 </select></p>
@@ -57,11 +57,28 @@
         </div>
 
         <section id="lista-transacoes">
-            <h2>Histórico financeiro</h2>
+            <div id="header-lista">
+                <h2>Histórico financeiro</h2>
+                <button id="clear-AllList"> <ion-icon name="trash-outline"></ion-icon> </button>
+            </div>
             <ul id="listagem">
-                <!-- As transações serão adicionadas aqui dinamicamente -->
-                
+                <!-- As transações serão adicionadas aqui dinamicamente -->  
             </ul>
+
+            <div id="fundoModal-delete" class="fundoModal-delete">
+                <div id="modal-delete">
+                    <div id="modal-header">
+                        <h3>Excluir Transações</h3>
+                        
+                    </div>
+                    <p>Você tem certeza que deseja limpar o histórico?</p>
+                    <div class="modal-buttons">
+                        <button id="btn-cancelar">Cancelar</button>
+                        <button id="btn-excluir">Excluir</button>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         
@@ -69,7 +86,7 @@
         <button id="open-modal" class="btn-modal">
             <ion-icon name="add-outline"></ion-icon>
         </button>
-    <Footer>
+
     <Footer>
         <p>Desenvolvido por Will ❤️</p>
     </Footer>
