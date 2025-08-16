@@ -6,6 +6,7 @@ const openModal = document.querySelector('#open-modal')
 const toggleModal = () => {
     fundoModal.classList.toggle('ativo')
 }
+
 // abrir ou fechar o modal
 openModal.addEventListener('click', toggleModal)
 closeModal.addEventListener('click', toggleModal)
@@ -45,6 +46,7 @@ btnExcluir.addEventListener('click', function (e) {
     atualizarPainelResumo()
     ModalLimpar()
 })
+
 
 // Selecionando os elementos do DOM
 const entrada = document.querySelector('#entrada')
@@ -148,7 +150,10 @@ function renderizarLista(){
         li.innerHTML = `
         <p> ${transacoes.descricao} </p>
         <p> ${valorFormatado} </p>
-        <p> ${transacoes.tipo === 'entrada' ? 'Entrada <Strong>⇑</Strong>' : 'Saída <Strong>⇓</Strong>'} </p>`
+        <p> ${transacoes.tipo === 'entrada' ? 'Entrada <Strong>⇑</Strong>' : 'Saída <Strong>⇓</Strong>'} </p>
+        <button class="btn-apagar" data-id="${transacoes.id}">
+            <ion-icon name="trash-bin-outline"></ion-icon>
+        </button>`
 
         listaUl.appendChild(li)
 
@@ -205,5 +210,23 @@ btnLimpar.addEventListener('click', function limparInput(e) {
     valorInput.value = ''
     tipoInput.value = '/'
     descricaoInput.focus()
-})  
+})
+
+// Botão para limpar um item especifico do Historico
+
+listaUl.addEventListener('click', function (e) {
+    
+    const elementoClicado = e.target
+
+    const btnApagar = elementoClicado.closest('.btn-apagar')
+
+    if(btnApagar){
+        const idDelete = btnApagar.dataset.id
+        transacoes = transacoes.filter(t => t.id !== parseInt(idDelete))
+
+        atualizarPainelResumo()
+    }
+})
+
+   
 

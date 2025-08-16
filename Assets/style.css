@@ -372,3 +372,18 @@ li {
         background-color: #c0392b;
     }
 }
+
+.btn-apagar {
+    padding: 10px;
+    font-size: 1.0em;
+    color: #fff;
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    &:hover {
+        color: #fff;
+        background-color: #353f5f;
+    }
+}
